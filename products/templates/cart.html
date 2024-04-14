@@ -22,7 +22,7 @@
                 <td>
                     <a class="text-decoration-none text-primary" href="{% url 'product' item.product.pk %}">{{ item.product.name }}</a>
                 </td>
-                <td>${{ item.product.price }}</td>
+                <td> ₹{{ item.product.price }}</td>
                 <td>
                     <span class="input-group-btn">
                     <a class="text-decoration-none btn btn-sm btn-outline-danger" href="{% url 'cart_quantity' item.pk %}?action=remove">-</a>
@@ -32,7 +32,7 @@
                         <a class="text-decoration-none btn btn-sm btn-outline-success" href="{% url 'cart_quantity' item.pk %}?action=add">+</a>
                     </span>     
                     </td>
-                <td>${{ item.get_total }}</td>
+                <td> ₹{{ item.get_total }}</td>
                 <td><a class="text-decoration-none text-danger" href="{% url 'cart_action' item.pk %}?action=remove">Remove</a></td>
             </tr>
             {% endfor %}
@@ -76,7 +76,7 @@
 
     <div class="card mb-3">
         <div class="card-body">
-              <p>Total: ${{ cart_total|floatformat:2 }}</p> 
+              <p>Total:  ₹{{ cart_total|floatformat:2 }}</p> 
               <button class="btn btn-outline-success">Submit</button> 
         </div>
     </div>

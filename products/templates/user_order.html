@@ -30,9 +30,9 @@
                 <td>
                     <a class="text-decoration-none text-primary" href="{% url 'product' item.product.pk %}">{{ item.product.name }}</a>
                 </td>
-                <td>${{ item.product.price }}</td>
+                <td> ₹{{ item.product.price }}</td>
                 <td>{{ item.quantity }}</td>
-                <td>${{ item.get_total }}</td>
+                <td> ₹{{ item.get_total }}</td>
               
             </tr>
             {% endfor %}
@@ -41,7 +41,7 @@
 
     <div class="card my-3">
         <div class="card-body">
-              <span>Total: ${{ cart_total|floatformat:2 }}</span> 
+              <span>Total:  ₹{{ cart_total|floatformat:2 }}</span> 
         </div>
     </div>
 
